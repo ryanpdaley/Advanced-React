@@ -78,8 +78,8 @@ export default function CreateProduct() {
           <textarea
             type="description"
             id="description"
-            name="price"
-            placeholder="Price"
+            name="description"
+            placeholder="Description"
             value={inputs.description}
             onChange={handleChange}
           />
