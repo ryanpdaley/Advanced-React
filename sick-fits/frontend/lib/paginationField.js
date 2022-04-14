@@ -18,7 +18,6 @@ export default function paginationField() {
         return false;
       }
       if (items.length) {
-        console.log(`There are ${items.length} in the cache`);
         return items;
       }
       return false;
