@@ -4,7 +4,6 @@ export default function paginationField() {
   return {
     keyArgs: false,
     read(existing = [], { args, cache }) {
-      console.log({ existing, args, cache });
       const { skip, first } = args;
       const data = cache.readQuery({ query: PAGINATION_QUERY });
       const count = data?._allProductsMeta?.count;
@@ -24,12 +23,10 @@ export default function paginationField() {
     },
     merge(existing, incoming, { args }) {
       const { skip, first } = args;
-      console.log(`Merging from the network ${incoming.length}`);
       const merged = existing ? existing.slice(0) : [];
       for (let i = skip; i < skip + incoming.length; ++i) {
         merged[i] = incoming[i - skip];
       }
-      console.log(merged);
       return merged;
     },
   };
