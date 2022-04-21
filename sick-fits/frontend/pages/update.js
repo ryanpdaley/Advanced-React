@@ -4,7 +4,9 @@ export default function UpdatePage({ query }) {
   console.log(query);
   return (
     <div>
-      <UpdateProduct id={query.id} />
+      <PleaseSignIn>
+        <UpdateProduct id={query.id} />
+      </PleaseSignIn>
     </div>
   );
 }
